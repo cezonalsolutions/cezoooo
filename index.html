@@ -1726,13 +1726,32 @@ body{
         width:55px;
     }
 
+    
     .village{
+
         font-size:10px;
-        padding:7px 10px;
-        max-width:130px;
+
+        padding:6px 8px;
+
+        width:110px;
+
+        min-height:38px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        text-align:center;
+
+        line-height:1.2;
+
         white-space:normal;
-        line-height:1.3;
+
+        box-sizing:border-box;
     }
+
 
     /* RIGHT SIDE */
 
@@ -1750,6 +1769,688 @@ body{
         left:5%;
     }
 
+}
+.fireworks-row{
+
+    position:absolute;
+
+    top:500px;
+
+    left:0;
+
+    width:100%;
+
+    height:220px;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.firework{
+    position:absolute;
+    width:20px;
+    height:20px;
+}
+
+.firework::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    color:#FFD700;
+
+    font-size:24px;
+
+    text-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFD700,
+    0 0 40px #FFD700;
+
+    transform:translate(-50%,-50%);
+
+    animation:boom 3s infinite;
+}
+
+.fw1{left:2%;top:20px;}
+.fw2{left:7%;top:90px;}
+.fw3{left:12%;top:40px;}
+.fw4{left:17%;top:120px;}
+.fw5{left:22%;top:30px;}
+
+.fw6{left:27%;top:100px;}
+.fw7{left:32%;top:50px;}
+.fw8{left:37%;top:140px;}
+.fw9{left:42%;top:20px;}
+.fw10{left:47%;top:90px;}
+
+.fw11{left:52%;top:40px;}
+.fw12{left:57%;top:120px;}
+.fw13{left:62%;top:30px;}
+.fw14{left:67%;top:100px;}
+.fw15{left:72%;top:50px;}
+
+.fw16{left:77%;top:140px;}
+.fw17{left:82%;top:20px;}
+.fw18{left:87%;top:90px;}
+.fw19{left:92%;top:40px;}
+.fw20{left:97%;top:120px;}
+
+.fw1::before{animation-delay:0s;}
+.fw2::before{animation-delay:.15s;}
+.fw3::before{animation-delay:.3s;}
+.fw4::before{animation-delay:.45s;}
+.fw5::before{animation-delay:.6s;}
+.fw6::before{animation-delay:.75s;}
+.fw7::before{animation-delay:.9s;}
+.fw8::before{animation-delay:1.05s;}
+.fw9::before{animation-delay:1.2s;}
+.fw10::before{animation-delay:1.35s;}
+
+.fw11::before{animation-delay:1.5s;}
+.fw12::before{animation-delay:1.65s;}
+.fw13::before{animation-delay:1.8s;}
+.fw14::before{animation-delay:1.95s;}
+.fw15::before{animation-delay:2.1s;}
+.fw16::before{animation-delay:2.25s;}
+.fw17::before{animation-delay:2.4s;}
+.fw18::before{animation-delay:2.55s;}
+.fw19::before{animation-delay:2.7s;}
+.fw20::before{animation-delay:2.85s;}
+
+@keyframes boom{
+
+    0%{
+        opacity:1;
+        transform:
+        translate(-50%,-50%)
+        scale(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translate(-50%,-50%)
+        scale(4);
+    }
+}
+.hero-heading{
+    position:absolute;
+    overflow:visible;
+}
+
+.hero-fireworks{
+
+    position:absolute;
+
+    inset:-50px;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+.hf{
+
+    position:absolute;
+
+    color:#FFD700;
+
+    font-size:20px;
+
+    opacity:0;
+
+    text-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFD700,
+    0 0 40px #FFD700;
+
+    animation:heroBoom 2.5s infinite;
+}
+
+.hf1{left:0%;top:20px;animation-delay:0s;}
+.hf2{left:10%;top:70px;animation-delay:.2s;}
+.hf3{left:20%;top:10px;animation-delay:.4s;}
+.hf4{left:30%;top:90px;animation-delay:.6s;}
+.hf5{left:40%;top:30px;animation-delay:.8s;}
+
+.hf6{left:60%;top:20px;animation-delay:1s;}
+.hf7{left:70%;top:80px;animation-delay:1.2s;}
+.hf8{left:80%;top:10px;animation-delay:1.4s;}
+.hf9{left:90%;top:70px;animation-delay:1.6s;}
+.hf10{left:100%;top:30px;animation-delay:1.8s;}
+
+@keyframes heroBoom{
+
+    0%{
+        opacity:1;
+        transform:scale(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(3);
+    }
+}
+.offers-strip{
+
+    width:min(500px,92vw);
+
+    margin:80px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.offer-pill{
+
+    opacity:0;
+
+    transform:
+    translateY(80px)
+    scale(.8);
+
+    animation:
+    offerEntry .8s ease forwards,
+    offerFloat 3s ease-in-out infinite;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    padding:22px;
+
+    border-radius:60px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,215,0,.25),
+    rgba(255,255,255,.08)
+    );
+
+    border:2px solid rgba(255,215,0,.35);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 25px rgba(255,215,0,.25);
+}
+
+.offer1{
+    animation-delay:.2s;
+}
+
+.offer2{
+    animation-delay:.6s;
+}
+
+.offer-pill i{
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    text-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFD700;
+}
+
+.offer-pill span{
+
+    color:white;
+
+    font-family:'Bungee',cursive;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+}
+
+@keyframes offerEntry{
+
+    0%{
+        opacity:0;
+        transform:
+        translateY(80px)
+        scale(.8);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+@keyframes offerFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+@media(max-width:480px){
+
+    .offer-pill{
+
+        padding:18px;
+    }
+
+    .offer-pill i{
+
+        font-size:22px;
+    }
+
+    .offer-pill span{
+
+        font-size:14px;
+    }
+}
+.trust-line{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+.heart{
+
+    display:inline-block;
+
+    margin-right:6px;
+
+    animation:
+    heartBeat .8s ease-in-out infinite,
+    heartGlow 3s linear infinite;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.35);
+    }
+}
+
+@keyframes heartGlow{
+
+    0%{
+        filter:
+        drop-shadow(0 0 5px #ff1744)
+        hue-rotate(0deg);
+    }
+
+    25%{
+        filter:
+        drop-shadow(0 0 10px #ff4081)
+        hue-rotate(90deg);
+    }
+
+    50%{
+        filter:
+        drop-shadow(0 0 15px #FFD700)
+        hue-rotate(180deg);
+    }
+
+    75%{
+        filter:
+        drop-shadow(0 0 10px #00e5ff)
+        hue-rotate(270deg);
+    }
+
+    100%{
+        filter:
+        drop-shadow(0 0 5px #ff1744)
+        hue-rotate(360deg);
+    }
+}
+.products-heading{
+
+    text-align:center;
+
+    font-family:'Bungee',cursive;
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin:-20px 0 10px;
+}
+
+@media(max-width:480px){
+
+    .products-heading{
+
+        font-size:20px;
+
+        margin:-20px 0 20px;
+    }
+}
+.category-scroll{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    padding:15px;
+
+    margin:20px auto 40px;
+
+    flex-wrap:wrap;
+}
+
+.category-card{
+
+    width:130px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:15px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.category-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.category-card img{
+
+    width:80px;
+
+    height:80px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 12px;
+}
+
+.category-card span{
+
+    color:white;
+
+    font-family:'Bungee',cursive;
+
+    font-size:12px;
+
+    display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .category-scroll{
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+        scroll-behavior:smooth;
+
+        -ms-overflow-style:none;
+
+        scrollbar-width:none;
+    }
+
+    .category-scroll::-webkit-scrollbar{
+        display:none;
+    }
+
+    .category-card{
+
+        flex:0 0 auto;
+
+        width:110px;
+    }
+
+    .category-card img{
+
+        width:65px;
+
+        height:65px;
+    }
+
+    .category-card span{
+
+        font-size:10px;
+    }
+}
+.journey-section{
+
+    position:relative;
+
+    width:min(500px,92vw);
+
+    margin:70px auto;
+}
+
+.journey-line{
+
+    position:absolute;
+
+    left:20px;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:#FFD700;
+
+    border-radius:10px;
+}
+
+.journey-step{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin:35px 0;
+}
+
+.step-dot{
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#FFD700;
+
+    box-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFD700;
+
+    z-index:2;
+}
+
+.step-text{
+
+    flex:1;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+
+    font-family:'Bungee',cursive;
+
+    font-size:13px;
+}
+.fun-heading{
+
+    text-align:center;
+
+    font-family:'Bungee',cursive;
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin-top:-20px;
+}
+.join-form{
+
+    width:min(420px,92vw);
+
+    margin:25px auto 40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.join-input{
+
+    width:100%;
+
+    height:55px;
+
+    padding:0 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:15px;
+
+    box-sizing:border-box;
+}
+
+.join-input::placeholder{
+
+    color:rgba(255,255,255,.6);
+}
+
+.join-btn{
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#FFD700;
+
+    color:#000;
+
+    font-family:'Bungee',cursive;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.join-btn:hover{
+
+    transform:translateY(-3px);
+}
+
+@media(max-width:480px){
+
+    .join-input{
+
+        height:50px;
+
+        font-size:14px;
+    }
+
+    .join-btn{
+
+        height:50px;
+
+        font-size:12px;
+    }
+}
+.join-select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    background:
+    rgba(255,255,255,.12)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 15px center;
+
+    padding-right:45px;
+}
+
+.join-select option{
+
+    color:black;
 }
 </style>
 </head>
@@ -1855,7 +2556,20 @@ body{
 </div>
     </nav>
 <div class="hero-heading" id="heroTitle">
+<div class="hero-fireworks">
 
+    <span class="hf hf1">✦</span>
+    <span class="hf hf2">✦</span>
+    <span class="hf hf3">✦</span>
+    <span class="hf hf4">✦</span>
+    <span class="hf hf5">✦</span>
+    <span class="hf hf6">✦</span>
+    <span class="hf hf7">✦</span>
+    <span class="hf hf8">✦</span>
+    <span class="hf hf9">✦</span>
+    <span class="hf hf10">✦</span>
+
+</div>
     <span class="brand-name">
         CEZOO
     </span>
@@ -1929,7 +2643,31 @@ body{
     </div>
 
 </div>
+<div class="fireworks-row">
 
+    <div class="firework fw1"></div>
+    <div class="firework fw2"></div>
+    <div class="firework fw3"></div>
+    <div class="firework fw4"></div>
+    <div class="firework fw5"></div>
+    <div class="firework fw6"></div>
+    <div class="firework fw7"></div>
+    <div class="firework fw8"></div>
+    <div class="firework fw9"></div>
+    <div class="firework fw10"></div>
+
+    <div class="firework fw11"></div>
+    <div class="firework fw12"></div>
+    <div class="firework fw13"></div>
+    <div class="firework fw14"></div>
+    <div class="firework fw15"></div>
+    <div class="firework fw16"></div>
+    <div class="firework fw17"></div>
+    <div class="firework fw18"></div>
+    <div class="firework fw19"></div>
+    <div class="firework fw20"></div>
+
+</div>
 
 <div class="delivery-section">
 
@@ -2103,8 +2841,161 @@ body{
 
 </div>
 
+<div class="offers-strip">
+
+    <div class="offer-pill offer1">
+        <i class="fas fa-tags"></i>
+        <span>BEST OFFERS</span>
+    </div>
+
+    <div class="offer-pill offer2">
+        <i class="fas fa-indian-rupee-sign"></i>
+        <span>BEST PRICES</span>
+    </div>
+<div class="trust-line">
+    <span class="heart">❤️</span>
+    BUILT FOR VILLAGES. MADE FOR EVERYONE.
+</div>
+</div>
+<div class="products-heading">
+    WHAT WE SELL
+</div>
+
+<div class="category-scroll">
+
+    <div class="category-card">
+        <img src="we/1.png" alt="">
+        <span>FRUITS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/2.png" alt="">
+        <span>VEGETABLES</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/3.png" alt="">
+        <span>GROCERIES</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/4.png" alt="">
+        <span>SNACKS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/5.png" alt="">
+        <span>COOLDRINKS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/7.png" alt="">
+        <span>CHOCOLATES</span>
+    </div>
+     <div class="category-card">
+        <img src="we/8.png" alt="">
+        <span>BEST SNACKS</span>
+    </div>
+
+    <div class="category-card">
+        <img src="we/9.png" alt="">
+        <span>SKINCARE</span>
+    </div>
 
 
+
+</div>
+<div class="journey-section">
+
+    <div class="journey-line"></div>
+
+    <div class="journey-step">
+        <div class="step-dot"></div>
+        <div class="step-text"> BEST PRICES</div>
+    </div>
+
+    <div class="journey-step">
+        <div class="step-dot"></div>
+        <div class="step-text">BEST OFFERS</div>
+    </div>
+
+    <div class="journey-step">
+        <div class="step-dot"></div>
+        <div class="step-text">DELIVERY IN MINUTES</div>
+    </div>
+
+    <div class="journey-step">
+        <div class="step-dot"></div>
+        <div class="step-text">30+ VILLAGES</div>
+    </div>
+
+    <div class="journey-step">
+        <div class="step-dot"></div>
+        <div class="step-text">BUILT FOR VILLAGES</div>
+    </div>
+
+</div>
+
+<div class="fun-heading">
+  JOIN US
+</div>
+
+
+<div class="join-form">
+
+    <input
+        type="text"
+        placeholder="Enter Your Name"
+        class="join-input"
+    >
+
+    <input
+        type="tel"
+        placeholder="Mobile Number"
+        class="join-input"
+    >
+
+    <input
+        type="text"
+        placeholder="Your Village / Location"
+        class="join-input"
+    >
+<select class="join-input join-select">
+
+    <option value="">
+        Joining As
+    </option>
+
+    <option>
+        Partner
+    </option>
+
+    <option>
+        Supporter
+    </option>
+
+    <option>
+        Developer
+    </option>
+
+    <option>
+        Investor
+    </option>
+
+    <option>
+        Village Ambassador
+    </option>
+
+    <option>
+        Seller
+    </option>
+
+</select>
+    <button class="join-btn">
+        JOIN CEZOO
+    </button>
+
+</div>
 <div class="side-tab" id="sideTab">
     ❯
 </div>
@@ -2381,6 +3272,11 @@ function animateBike(){
     currentProgress +=
     (targetProgress - currentProgress) * 0.03;
 
+    /* STOP AT LAST VILLAGE */
+
+    currentProgress =
+    Math.min(currentProgress, 0.995);
+
     const point =
     path.getPointAtLength(
         length * currentProgress
@@ -2389,9 +3285,8 @@ function animateBike(){
     bike.style.left =
     (point.x - 40) + "px";
 
-    bike.style.top =
-    (point.y - 20) + "px";
-
+   bike.style.top =
+(point.y - 30) + "px";
     requestAnimationFrame(
         animateBike
     );
