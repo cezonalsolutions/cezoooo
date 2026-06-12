@@ -32,7 +32,7 @@ body{
 
 .main{
     min-height:100vh;
-    padding-bottom:250px;
+    padding-bottom:10px;
 }
 
 /* SPLASH */
@@ -2452,6 +2452,493 @@ body{
 
     color:black;
 }
+.typing-text{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:17px;
+
+    max-width:700px;
+
+    margin:25px auto 50px;
+
+    line-height:2;
+
+    padding:0 25px;
+
+    font-weight:600;
+}
+
+#typing{
+
+    border-right:3px solid #FFD700;
+
+    padding-right:5px;
+}
+
+@media(max-width:480px){
+
+    .typing-text{
+
+        font-size:14px;
+
+        line-height:1.9;
+
+        padding:0 18px;
+    }
+}
+.media-scroll{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    padding:20px;
+
+    margin:30px auto;
+
+    flex-wrap:wrap;
+}
+
+.media-card{
+
+    width:240px;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.08);
+
+    flex-shrink:0;
+
+    transition:.3s;
+}
+
+.media-card:hover{
+
+    transform:translateY(-8px);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .media-scroll{
+
+        justify-content:flex-start;
+
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+
+        scroll-behavior:smooth;
+
+        -ms-overflow-style:none;
+
+        scrollbar-width:none;
+
+        padding-left:15px;
+    }
+
+    .media-scroll::-webkit-scrollbar{
+        display:none;
+    }
+
+    .media-card{
+
+        width:235px;
+
+        height:500px;
+    }
+}
+.launching-soon{
+
+    text-align:center;
+
+    margin:50px auto;
+}
+
+.launch-title{
+
+    font-family:'Bungee',cursive;
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+}
+
+.store-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+}
+
+.store-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:white;
+}
+
+.store-item i{
+
+    font-size:38px;
+
+    color:#FFD700;
+}
+
+.store-item span{
+
+    font-size:14px;
+
+    font-weight:600;
+}
+
+@media(max-width:480px){
+
+    .launch-title{
+        font-size:18px;
+    }
+
+    .store-item i{
+        font-size:32px;
+    }
+
+    .store-item span{
+        font-size:12px;
+    }
+}
+.app-exclusive{
+
+    text-align:center;
+
+    font-family:'Bungee',cursive;
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin:40px 0 20px;
+}
+
+@media(max-width:480px){
+
+    .app-exclusive{
+
+        font-size:18px;
+
+        margin:30px 0 15px;
+    }
+}
+.launching-soon{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.launch-fireworks{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+}
+
+.fw{
+
+    position:absolute;
+
+    color:#FFD700;
+
+    font-size:24px;
+
+    opacity:0;
+
+    text-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFD700,
+    0 0 40px #FFD700;
+
+    animation:fireBlast 2s infinite;
+}
+
+.fw1{left:5%;top:20%;animation-delay:0s;}
+.fw2{left:20%;top:60%;animation-delay:.3s;}
+.fw3{left:35%;top:25%;animation-delay:.6s;}
+.fw4{left:50%;top:70%;animation-delay:.9s;}
+.fw5{left:65%;top:20%;animation-delay:1.2s;}
+.fw6{left:80%;top:55%;animation-delay:1.5s;}
+.fw7{left:92%;top:30%;animation-delay:1.8s;}
+.fw8{left:45%;top:10%;animation-delay:2.1s;}
+
+@keyframes fireBlast{
+
+    0%{
+        opacity:1;
+        transform:scale(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(3);
+    }
+}
+.more-villages-heading{
+
+    text-align:center;
+
+    font-family:'Bungee',cursive;
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin:40px 0 20px;
+}
+
+@media(max-width:480px){
+
+    .more-villages-heading{
+
+        font-size:18px;
+    }
+}
+.footer{
+    width:min(900px,92vw);
+    margin:70px auto 30px;
+    padding:35px 25px;
+    text-align:center;
+
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.footer-title{
+    font-family:'Bungee',cursive;
+    font-size:34px;
+    color:#FFD700;
+
+    text-shadow:
+    0 0 15px #FFD700,
+    0 0 30px #FFD700;
+}
+
+.footer-tagline{
+    color:white;
+    font-size:16px;
+    letter-spacing:3px;
+    margin-top:8px;
+    font-weight:700;
+}
+
+.footer-content{
+    color:white;
+    margin-top:20px;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.footer-vision{
+    margin-top:25px;
+
+    color:#FFD700;
+
+    font-family:'Bungee',cursive;
+
+    font-size:15px;
+
+    text-shadow:0 0 10px #FFD700;
+}
+
+.footer-copy{
+    margin-top:25px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:13px;
+}
+
+@media(max-width:480px){
+
+    .footer-title{
+        font-size:26px;
+    }
+
+    .footer-content{
+        font-size:13px;
+    }
+
+    .footer-vision{
+        font-size:11px;
+    }
+}
+
+
+.privacy-text a{
+    color:#FFD700;
+    text-decoration:underline;
+    font-weight:700;
+}
+.privacy-text{
+    color:rgba(255,255,255,.85);
+    font-size:12px;
+    text-align:center;
+    margin-top:5px;
+    padding:0 10px;
+    white-space:nowrap;
+    overflow-x:auto;
+}
+
+.privacy-text::-webkit-scrollbar{
+    display:none;
+}
+
+.policy-link{
+    color:#FFD700;
+    text-decoration:underline;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.bottom-sheet{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:-100%;
+
+    height:70vh;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e,
+        #4ade80
+    );
+
+    color:white;
+
+    border-radius:30px 30px 0 0;
+
+    padding:30px;
+
+    z-index:99999;
+
+    transition:.4s ease;
+
+    overflow-y:auto;
+
+    box-shadow:
+    0 -10px 40px rgba(0,0,0,.25);
+}
+
+.bottom-sheet.show{
+    bottom:0;
+}
+
+.sheet-handle{
+    width:70px;
+    height:6px;
+    background:white;
+    border-radius:50px;
+    margin:0 auto 25px;
+}
+
+.bottom-sheet h2{
+    font-family:'Bungee',cursive;
+    color:white;
+    font-size:22px;
+    text-align:center;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.bottom-sheet p{
+    font-size:15px;
+    line-height:2;
+    color:white;
+}
+
+.sheet-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:99998;
+}
+
+.sheet-overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+.footer-address{
+    margin-top:20px;
+
+    color:white;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    padding:15px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.12);
+}
+
+@media(max-width:480px){
+
+    .footer-address{
+        font-size:13px;
+    }
+
+}
+
+
+@keyframes shake{
+    0%,100%{transform:translateX(0);}
+    20%{transform:translateX(-8px);}
+    40%{transform:translateX(8px);}
+    60%{transform:translateX(-8px);}
+    80%{transform:translateX(8px);}
+}
+
+.notify-box.shake{
+    animation:shake .4s ease;
+}
 </style>
 </head>
 <body>
@@ -2632,10 +3119,11 @@ body{
         <i class="fab fa-whatsapp whatsapp-icon"></i>
 
         <input
-            type="tel"
-            placeholder="WhatsApp Number"
-            maxlength="10"
-        >
+    id="whatsappNumber"
+    type="tel"
+    placeholder="WhatsApp Number"
+    maxlength="10"
+>
 
        <button id="notifyBtn">
     <i class="fas fa-bell"></i>
@@ -2841,6 +3329,10 @@ body{
 
 </div>
 
+<div class="more-villages-heading">
+    + MORE VILLAGES
+</div>
+
 <div class="offers-strip">
 
     <div class="offer-pill offer1">
@@ -2901,7 +3393,10 @@ body{
         <img src="we/9.png" alt="">
         <span>SKINCARE</span>
     </div>
-
+ <div class="category-card">
+        <img src="we/print.png" alt="">
+        <span>PRINTING</span>
+    </div>
 
 
 </div>
@@ -2935,6 +3430,64 @@ body{
     </div>
 
 </div>
+<div class="fun-heading">
+    WHY US?
+</div>
+
+<div class="typing-text">
+    <span id="typing"></span>
+</div>
+<div class="app-exclusive">
+    APP PREVIEW
+</div> 
+<div class="media-scroll">
+
+    <video class="media-card" autoplay muted loop playsinline>
+        <source src="we/1stvideo.mp4" type="video/mp4">
+    </video>
+
+    <video class="media-card" autoplay muted loop playsinline>
+        <source src="we/2ndvi.mp4" type="video/mp4">
+    </video>
+    <img src="we/11.jpeg" class="media-card">
+    <img src="we/12.jpeg" class="media-card">
+    <img src="we/WhatsApp Image 2026-06-12 at 20.45.38.jpeg" class="media-card">
+
+</div>
+<div class="launching-soon">
+
+    <div class="launch-title">
+        LAUNCHING SOON
+    </div>
+
+    <div class="store-row">
+
+        <div class="store-item">
+            <i class="fab fa-google-play"></i>
+            <span>Play Store</span>
+        </div>
+
+        <div class="store-item">
+            <i class="fab fa-apple"></i>
+            <span>App Store</span>
+        </div>
+
+    </div>
+<div class="launch-fireworks">
+
+    <span class="fw fw1">✦</span>
+    <span class="fw fw2">✦</span>
+    <span class="fw fw3">✦</span>
+    <span class="fw fw4">✦</span>
+    <span class="fw fw5">✦</span>
+    <span class="fw fw6">✦</span>
+    <span class="fw fw7">✦</span>
+    <span class="fw fw8">✦</span>
+
+</div>
+</div>
+
+
 
 <div class="fun-heading">
   JOIN US
@@ -2991,11 +3544,69 @@ body{
     </option>
 
 </select>
-    <button class="join-btn">
-        JOIN CEZOO
-    </button>
+<div class="privacy-text">
+    By continuing, you agree
+    <span id="termsBtn" class="policy-link">Terms of Service</span>
+    and
+    <span id="privacyBtn" class="policy-link">Privacy Policy</span>.
+</div>
+
+<button class="join-btn">
+    JOIN CEZOO
+</button>
 
 </div>
+
+
+
+
+
+
+
+<div class="footer">
+
+    <div class="footer-title">
+        CEZOO
+    </div>
+
+    <div class="footer-tagline">
+        DELIVERY IN MINUTES
+    </div>
+    
+
+    <div class="footer-content">
+        CEZOO is transforming village shopping by bringing daily essentials,
+        groceries, fresh produce, snacks, household items and much more
+        directly to your doorstep. Our goal is to save time, reduce travel,
+        support local sellers and provide a modern shopping experience for
+        every family.
+    </div>
+
+    <div class="footer-content">
+        We believe every village deserves fast service, reliable delivery and
+        access to quality products at affordable prices. CEZOO is committed to
+        creating convenience, trust and happiness through technology and local
+        partnerships.
+    </div>
+<div class="footer-address">
+    VMAX Opposite, 2nd Floor<br>
+    Tanuku, Andhra Pradesh, India ❤️
+</div>
+    <div class="footer-vision">
+        BUILDING THE FUTURE OF VILLAGE COMMERCE
+    </div>
+
+    <div class="footer-copy">
+        © 2026 CEZOO • BUILT FOR VILLAGES • MADE FOR EVERYONE ❤️
+    </div>
+
+</div>
+
+
+
+
+
+
 <div class="side-tab" id="sideTab">
     ❯
 </div>
@@ -3015,8 +3626,113 @@ body{
 </div>
     
 </div>
+<div class="sheet-overlay" id="sheetOverlay"></div>
+
+<div class="bottom-sheet" id="privacySheet">
+
+    <div class="sheet-handle"></div>
+<h2>PRIVACY POLICY</h2>
+
+<p>
+At CEZOO, we value and respect your privacy. This Privacy Policy explains
+how we collect, use, protect, and manage your personal information when you
+use our platform, website, mobile applications, and related services.
+
+We may collect information such as your name, mobile number, delivery
+address, village/location details, and other information required to provide
+our services efficiently. This information helps us process orders, improve
+customer experience, provide support, and communicate important updates.
+
+CEZOO is committed to protecting your personal information. We implement
+reasonable security measures to safeguard your data from unauthorized access,
+misuse, disclosure, or alteration.
+
+We do not sell, rent, or trade your personal information to third parties.
+Information may only be shared with trusted service providers, delivery
+partners, or legal authorities when necessary to provide services or comply
+with applicable laws and regulations.
+
+Our platform may use cookies and similar technologies to improve performance,
+enhance user experience, analyze usage patterns, and personalize content.
+Users may choose to disable cookies through their browser settings.
+
+While we take every reasonable step to protect your information, no method
+of electronic transmission or storage is completely secure. Therefore,
+CEZOO cannot guarantee absolute security of all data.
+
+We may update this Privacy Policy from time to time to reflect changes in
+our services, technology, or legal requirements. Updated policies will be
+posted on our platform and become effective immediately upon publication.
+
+By accessing or using CEZOO, you acknowledge that you have read, understood,
+and agreed to this Privacy Policy and consent to the collection and use of
+your information as described herein.
+
+Thank you for trusting CEZOO. Your privacy, trust, and satisfaction remain
+important to us.
+</p>
+
+</div>
+
+<div class="bottom-sheet" id="termsSheet">
+
+    <div class="sheet-handle"></div>
+
+   
+<h2>TERMS & CONDITIONS</h2>
+
+<p>
+Welcome to CEZOO. These Terms & Conditions govern your access to and use of
+our platform, website, mobile applications, and related services. By using
+CEZOO, you agree to be bound by these terms.
+
+Users are responsible for providing accurate and up-to-date information while
+registering, placing orders, or communicating with our team. Any misuse,
+fraudulent activity, or violation of applicable laws may result in suspension
+or termination of access to our services.
+
+CEZOO aims to provide fast, reliable, and convenient delivery services.
+However, delivery times may vary due to weather conditions, traffic,
+availability of products, operational requirements, or circumstances beyond
+our control.
+
+Product availability, pricing, promotional offers, discounts, and service
+areas may change without prior notice. CEZOO reserves the right to update,
+modify, suspend, or discontinue any part of its services at any time.
+
+Users are expected to treat delivery partners, sellers, support staff, and
+other users with respect. Any abusive, harmful, or unlawful behavior may lead
+to restrictions on account access.
+
+While we strive to maintain uninterrupted services, CEZOO does not guarantee
+that the platform will always be available without delays, interruptions, or
+technical issues.
+
+By continuing to access or use CEZOO, you acknowledge that you have read,
+understood, and agreed to these Terms & Conditions. Your continued use of the
+platform signifies your acceptance of any future updates or modifications to
+these terms.
+
+Thank you for choosing CEZOO as your trusted village commerce and delivery
+partner.
+</p>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+
+
+const supabaseUrl = "https://mqccftksmnkmnkzlhbbh.supabase.co/";
+const supabaseKey = "sb_publishable_mKMZnntaikLWrI1vzxt2-Q_fs9krAY_";
+
+const supabaseClient = window.supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
+
+console.log("Supabase Connected ✅");
 
 setTimeout(function(){
 
@@ -3213,27 +3929,54 @@ setTimeout(function(){
 
 },3000);
 
-
 const notifyBtn =
-document.getElementById(
-    "notifyBtn"
-);
+document.getElementById("notifyBtn");
+
+const whatsappInput =
+document.getElementById("whatsappNumber");
+
+const notifyBox =
+document.querySelector(".notify-box");
 
 notifyBtn.addEventListener(
-    "click",
-    () => {
+"click",
+async () => {
 
-        notifyBtn.classList.remove(
-            "ring"
-        );
+    const mobile =
+    whatsappInput.value.trim();
 
-        void notifyBtn.offsetWidth;
+    if(!/^[0-9]{10}$/.test(mobile)){
 
-        notifyBtn.classList.add(
-            "ring"
-        );
+        notifyBox.classList.remove("shake");
+        void notifyBox.offsetWidth;
+        notifyBox.classList.add("shake");
+
+        return;
     }
-);
+
+    notifyBtn.classList.remove("ring");
+    void notifyBtn.offsetWidth;
+    notifyBtn.classList.add("ring");
+
+    try{
+
+        await supabaseClient
+        .from("whatsappcezoo")
+        .insert([
+            {
+                mobile: mobile
+            }
+        ]);
+
+        whatsappInput.value = "";
+
+    }catch(err){
+
+        console.log(err);
+
+    }
+
+});
 const bike = document.getElementById("routeBike");
 const path = document.getElementById("routePath");
 const routeSection = document.querySelector(".route-section");
@@ -3293,6 +4036,90 @@ function animateBike(){
 }
 
 animateBike();
+
+const text =
+"CEZOO is more than just a delivery platform. We are building a smarter and faster way for villages to access groceries, daily essentials, fresh products, and exciting offers without unnecessary travel. Our mission is to connect local communities with better prices, quicker deliveries, reliable service, and a seamless shopping experience. We believe villages deserve the same convenience as cities. Every order helps us grow stronger, reach more families, support local sellers, and create new opportunities. This is just the beginning of our journey, and together we are building the future of village commerce.";
+
+let i = 0;
+
+function typeText(){
+
+    if(i < text.length){
+
+        document.getElementById("typing").textContent +=
+        text.charAt(i);
+
+        i++;
+
+        setTimeout(typeText, 25);
+    }
+}
+
+typeText();
+const privacyBtn = document.getElementById("privacyBtn");
+const termsBtn = document.getElementById("termsBtn");
+
+const privacySheet = document.getElementById("privacySheet");
+const termsSheet = document.getElementById("termsSheet");
+
+const sheetOverlay = document.getElementById("sheetOverlay");
+
+privacyBtn.onclick = () => {
+    privacySheet.classList.add("show");
+    sheetOverlay.classList.add("show");
+};
+
+termsBtn.onclick = () => {
+    termsSheet.classList.add("show");
+    sheetOverlay.classList.add("show");
+};
+
+sheetOverlay.onclick = () => {
+
+    privacySheet.classList.remove("show");
+    termsSheet.classList.remove("show");
+
+    sheetOverlay.classList.remove("show");
+};
+
+
+
+document
+.getElementById("bell")
+.addEventListener("click", async () => {
+
+    try{
+
+        await supabaseClient
+        .from("bellcezoo")
+        .insert([{}]);
+
+    }catch(err){
+
+        console.log(err);
+
+    }
+
+});
+
+
+document
+.getElementById("heartBtn")
+.addEventListener("click", async () => {
+
+    try{
+
+        await supabaseClient
+        .from("heartcezoo")
+        .insert([{}]);
+
+    }catch(err){
+
+        console.log(err);
+
+    }
+
+});
 </script>
 
 </body>
