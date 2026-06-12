@@ -1392,6 +1392,339 @@ body{
     }
 
 }
+.seller-card{
+    position:relative;
+
+    width:min(460px,92vw);
+
+    margin:50px auto;
+
+    padding:40px 25px 30px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.2);
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+/* TITLE */
+
+.seller-title{
+
+    font-family:'Bungee', cursive;
+
+    color:#FFD700;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 0 10px #FFD700;
+}
+
+/* COMPANY NAME */
+
+.seller-name{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.6);
+}
+
+/* ADDRESS */
+
+.address-title{
+
+    color:#FFD700;
+
+    font-family:'Bungee', cursive;
+
+    font-size:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-bottom:12px;
+
+    text-shadow:
+    0 0 10px #FFD700;
+}
+
+.address-title i{
+    font-size:18px;
+}
+
+.address-lines{
+
+    color:white;
+
+    font-size:15px;
+
+    line-height:2;
+
+    text-align:center;
+}
+
+/* SCREWS */
+
+.screw{
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(#e5e5e5,#777);
+
+    box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.8),
+    inset 0 -2px 2px rgba(0,0,0,.5);
+}
+
+.screw::after{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:10px;
+    height:2px;
+
+    background:#444;
+
+    transform:
+    translate(-50%,-50%);
+}
+
+.tl{
+    top:12px;
+    left:12px;
+}
+
+.tr{
+    top:12px;
+    right:12px;
+}
+
+.bl{
+    bottom:12px;
+    left:12px;
+}
+
+.br{
+    bottom:12px;
+    right:12px;
+}
+
+/* BALLOONS */
+
+.seller-balloon{
+    position:absolute;
+
+    font-size:34px;
+}
+
+.seller-balloon.left{
+    top:10px;
+    left:45px;
+
+    animation:floatLeft 4s ease-in-out infinite;
+}
+
+.seller-balloon.right{
+    top:10px;
+    right:45px;
+
+    animation:floatRight 4s ease-in-out infinite;
+}
+
+@keyframes floatLeft{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes floatRight{
+
+    0%,100%{
+        transform:translateY(-8px);
+    }
+
+    50%{
+        transform:translateY(5px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .seller-card{
+        padding:35px 18px 25px;
+    }
+
+    .seller-title{
+        font-size:14px;
+    }
+
+    .seller-name{
+        font-size:18px;
+    }
+
+    .address-title{
+        font-size:12px;
+    }
+
+    .address-lines{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+    .seller-balloon{
+        font-size:26px;
+    }
+}
+.route-section{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    margin:60px auto;
+    height:4200px;
+}
+
+.route-title{
+    text-align:center;
+    font-family:'Bungee',cursive;
+    color:#FFD700;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.route-svg{
+    position:absolute;
+    width:100%;
+    height:4200px;
+}
+
+.route-svg path{
+    fill:none;
+    stroke:#FFD700;
+    stroke-width:10;
+    stroke-linecap:round;
+    filter:drop-shadow(0 0 12px #FFD700);
+}
+
+.route-bike{
+    position:absolute;
+    width:80px;
+    z-index:100;
+    pointer-events:none;
+}
+
+.village{
+    position:absolute;
+
+    color:white;
+
+    font-weight:700;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:10px 15px;
+
+    border-radius:25px;
+
+    white-space:nowrap;
+}
+
+.v1{top:50px;left:240px;}
+.v2{top:190px;left:40px;}
+.v3{top:330px;left:240px;}
+.v4{top:470px;left:40px;}
+.v5{top:610px;left:240px;}
+.v6{top:750px;left:40px;}
+.v7{top:890px;left:240px;}
+.v8{top:1030px;left:40px;}
+.v9{top:1170px;left:240px;}
+.v10{top:1310px;left:40px;}
+.v11{top:1450px;left:240px;}
+.v12{top:1590px;left:40px;}
+.v13{top:1730px;left:240px;}
+.v14{top:1870px;left:40px;}
+.v15{top:2010px;left:240px;}
+.v16{top:2150px;left:40px;}
+.v17{top:2290px;left:240px;}
+.v18{top:2430px;left:40px;}
+.v19{top:2570px;left:240px;}
+.v20{top:2710px;left:40px;}
+.v21{top:2850px;left:240px;}
+.v22{top:2990px;left:40px;}
+.v23{top:3130px;left:240px;}
+.v24{top:3270px;left:40px;}
+.v25{top:3410px;left:240px;}
+.v26{top:3550px;left:40px;}
+.v27{top:3690px;left:240px;}
+.v28{top:3830px;left:40px;}
+.v29{top:3970px;left:240px;}
+.v30{top:4110px;left:120px;}
+
+@media(max-width:480px){
+
+    .route-section{
+        max-width:350px;
+    }
+
+    .route-bike{
+        width:60px;
+    }
+
+    .village{
+        font-size:11px;
+        padding:8px 12px;
+    }
+
+    .v1,.v3,.v5,.v7,.v9,.v11,.v13,.v15,.v17,.v19,.v21,.v23,.v25,.v27,.v29{
+        left:180px;
+    }
+}
 </style>
 </head>
 <body>
@@ -1638,7 +1971,111 @@ body{
 
 </div>
 
+<div class="seller-card">
 
+    <!-- Screws -->
+    <span class="screw tl"></span>
+    <span class="screw tr"></span>
+    <span class="screw bl"></span>
+    <span class="screw br"></span>
+
+    <!-- Balloons -->
+    <div class="seller-balloon left">🎈</div>
+    <div class="seller-balloon right">🎈</div>
+
+    <div class="seller-title">
+        OUR SELLER DETAILS
+    </div>
+
+    <div class="seller-name">
+        Gayatri Shankar Enterprises
+    </div>
+
+    <div class="seller-address">
+
+        <div class="address-title">
+            <i class="fas fa-location-dot"></i>
+            ADDRESS
+        </div>
+
+        <div class="address-lines">
+            VMAX Opposite<br>
+            Ground Floor<br>
+            Tanuku<br>
+            West Godavari<br>
+            Andhra Pradesh
+        </div>
+
+    </div>
+
+</div>
+
+<div class="route-section">
+
+    <h2 class="route-title">
+        DELIVERY NETWORK
+    </h2>
+
+    <img src="fast-shipping.png"
+         class="route-bike"
+         id="routeBike">
+
+    <svg class="route-svg"
+         viewBox="0 0 400 4200">
+
+        <path id="routePath"
+        d="
+        M200 50
+        C320 150 320 250 200 350
+        C80 450 80 550 200 650
+        C320 750 320 850 200 950
+        C80 1050 80 1150 200 1250
+        C320 1350 320 1450 200 1550
+        C80 1650 80 1750 200 1850
+        C320 1950 320 2050 200 2150
+        C80 2250 80 2350 200 2450
+        C320 2550 320 2650 200 2750
+        C80 2850 80 2950 200 3050
+        C320 3150 320 3250 200 3350
+        C80 3450 80 3550 200 3650
+        C320 3750 320 3850 200 3950
+        C80 4050 80 4150 200 4200
+        "/>
+
+    </svg>
+
+    <div class="village v1">TANUKU</div>
+    <div class="village v2">VELPURU</div>
+    <div class="village v3">KAVALIPURAM</div>
+    <div class="village v4">RELANGI</div>
+    <div class="village v5">ATTILI</div>
+    <div class="village v6">NATTA RAMESWARAM</div>
+    <div class="village v7">PALI</div>
+    <div class="village v8">MALLIPUDI</div>
+    <div class="village v9">JUTTIGA</div>
+    <div class="village v10">PENUMANTRA</div>
+    <div class="village v11">VELEGALAVARIPALEM</div>
+    <div class="village v12">SOMARAJU ILLINDRAPARRU</div>
+    <div class="village v13">KATHAVAPADU</div>
+    <div class="village v14">KOTHAPADU</div>
+    <div class="village v15">KANTERU</div>
+    <div class="village v16">ARJUNAPALEM</div>
+    <div class="village v17">IRAGAVARAM</div>
+    <div class="village v18">GOTERU</div>
+    <div class="village v19">MARTERU</div>
+    <div class="village v20">AKIVEEDU</div>
+    <div class="village v21">BHIMAVARAM</div>
+    <div class="village v22">PALAKOLLU</div>
+    <div class="village v23">MOGALTUR</div>
+    <div class="village v24">NARSAPUR</div>
+    <div class="village v25">PODURU</div>
+    <div class="village v26">PENUGONDA</div>
+    <div class="village v27">ACHANTA</div>
+    <div class="village v28">SIDHANTAM</div>
+    <div class="village v29">UNDRAJAVARAM</div>
+    <div class="village v30">END....</div>
+
+</div>
 
 
 
@@ -2173,6 +2610,61 @@ notifyBtn.addEventListener(
         );
     }
 );
+const bike = document.getElementById("routeBike");
+const path = document.getElementById("routePath");
+const routeSection = document.querySelector(".route-section");
+
+const length = path.getTotalLength();
+
+let currentProgress = 0;
+let targetProgress = 0;
+
+window.addEventListener("scroll", () => {
+
+    const rect = routeSection.getBoundingClientRect();
+
+    const start =
+    window.scrollY + rect.top;
+
+    const end =
+    start +
+    routeSection.offsetHeight -
+    window.innerHeight;
+
+    targetProgress =
+    (window.scrollY - start) /
+    (end - start);
+
+    targetProgress =
+    Math.max(
+        0,
+        Math.min(1, targetProgress)
+    );
+
+});
+
+function animateBike(){
+
+    currentProgress +=
+    (targetProgress - currentProgress) * 0.03;
+
+    const point =
+    path.getPointAtLength(
+        length * currentProgress
+    );
+
+    bike.style.left =
+    (point.x - 40) + "px";
+
+    bike.style.top =
+    (point.y - 20) + "px";
+
+    requestAnimationFrame(
+        animateBike
+    );
+}
+
+animateBike();
 </script>
 
 </body>
