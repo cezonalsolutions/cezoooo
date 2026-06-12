@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cezzo Splash</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:Arial,sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e,
+        #4ade80
+    );
+}
+
+.main{
+    min-height:100vh;
+    padding-bottom:250px;
+}
+
+/* SPLASH */
+
+.splash{
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e,
+        #4ade80
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+}
+
+.logo-wrap{
+    text-align:center;
+}
+
+.logo{
+    display:flex;
+    justify-content:center;
+    gap:4px;
+}
+
+/* LETTER */
+
+.letter{
+    font-family:'Bungee', cursive;
+
+    position:relative;
+
+    font-size:58px;
+
+    color:white;
+
+    opacity:0;
+
+    will-change:transform,opacity;
+
+    animation:blast .5s ease-out forwards;
+}
+
+.letter:nth-child(1){
+    animation-delay:0s;
+}
+.letter:nth-child(2){
+    animation-delay:.25s;
+}
+.letter:nth-child(3){
+    animation-delay:.5s;
+}
+.letter:nth-child(4){
+    animation-delay:.75s;
+}
+.letter:nth-child(5){
+    animation-delay:1s;
+}
+
+/* LETTER ENTRY */
+
+@keyframes blast{
+
+    0%{
+        opacity:0;
+        transform:translateY(30px) scale(.8);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+/* PARTICLES */
+
+.p{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    color:white;
+
+    font-size:12px;
+
+    opacity:0;
+}
+
+/* PARTICLE TIMING */
+
+.letter:nth-child(1) .p{
+    animation:particle .9s .1s forwards;
+}
+
+.letter:nth-child(2) .p{
+    animation:particle .9s .35s forwards;
+}
+
+.letter:nth-child(3) .p{
+    animation:particle .9s .6s forwards;
+}
+
+.letter:nth-child(4) .p{
+    animation:particle .9s .85s forwards;
+}
+
+.letter:nth-child(5) .p{
+    animation:particle .9s 1.1s forwards;
+}
+
+/* DIRECTIONS */
+
+.p1{ --x:-70px; --y:-50px; }
+.p2{ --x:70px; --y:-50px; }
+.p3{ --x:-80px; --y:0px; }
+.p4{ --x:80px; --y:0px; }
+.p5{ --x:-60px; --y:60px; }
+.p6{ --x:60px; --y:60px; }
+.p7{ --x:0px; --y:-80px; }
+.p8{ --x:0px; --y:80px; }
+
+@keyframes particle{
+
+    0%{
+        opacity:1;
+        transform:
+        translate(-50%,-50%)
+        scale(0);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+        translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+        )
+        scale(2.5)
+        rotate(360deg);
+    }
+
+}
+
+/* TAGLINE */
+.tagline{
+
+    margin-top:12px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    opacity:0;
+
+    transform:translateX(-120px);
+
+    animation:slideTag .8s ease forwards;
+
+    animation-delay:1.8s;
+}
+
+@keyframes slideTag{
+
+    0%{
+        opacity:0;
+        transform:translateX(-120px);
+    }
+
+    70%{
+        opacity:1;
+        transform:translateX(10px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+/* LOGO POP */
+
+.logo-wrap{
+    animation:logoPop 1s ease forwards;
+    animation-delay:2.2s;
+}
+
+@keyframes logoPop{
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* SPLASH OUT */
+
+.hideSplash{
+
+    opacity:0;
+
+    transform:scale(1.15);
+
+    pointer-events:none;
+
+}
+
+/* MAIN */
+
+.main{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e,
+        #4ade80
+    );
+
+    position:relative;
+}
+.navbar{
+
+    position:fixed;
+
+    top:15px;
+    left:20px;
+    right:20px;
+
+    height:68px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    z-index:1000;
+}
+.bell{
+
+    font-size:28px;
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transform-origin:top center;
+
+    animation:bellSwing 3s ease-in-out infinite;
+}
+
+@keyframes bellSwing{
+
+    0%,100%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(-8deg);
+    }
+
+    50%{
+        transform:rotate(0deg);
+    }
+
+    75%{
+        transform:rotate(8deg);
+    }
+}
+
+.bell.animate{
+
+    animation:bellClick .8s ease;
+}
+
+@keyframes bellClick{
+
+    0%{
+        transform:scale(1) rotate(0deg);
+    }
+
+    15%{
+        transform:scale(1.4) rotate(-20deg);
+    }
+
+    30%{
+        transform:scale(1.4) rotate(20deg);
+    }
+
+    45%{
+        transform:scale(1.3) rotate(-15deg);
+    }
+
+    60%{
+        transform:scale(1.2) rotate(15deg);
+    }
+
+    100%{
+        transform:scale(1) rotate(0deg);
+    }
+}
+.logo-text{
+
+    font-family:'Bungee', cursive;
+
+    font-size:26px;
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+    line-height:1;
+
+    margin:0;
+
+    display:flex;
+    align-items:center;
+}
+.side-tab{
+
+    position:fixed;
+
+    right:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:40px;
+
+    height:70px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px 0 0 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+.side-tab.hide{
+
+    right:-50px;
+}
+
+
+  
+
+.lang-switch.show{
+
+    right:0;
+}
+
+.lang-switch{
+
+    position:fixed;
+
+    right:-230px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:210px;
+
+    height:70px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px 0 0 22px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-evenly;
+
+    color:white;
+
+    transition:.35s;
+
+    z-index:9998;
+}
+.lang-switch span{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    min-width:45px;
+
+    text-align:center;
+}
+
+.toggle{
+
+    width:50px;
+
+    height:26px;
+
+    background:white;
+
+    border-radius:50px;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+.toggle-dot{
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    top:3px;
+
+    left:3px;
+
+    background:#22c55e;
+
+    border-radius:50%;
+
+    transition:.3s;
+}
+
+.toggle.active .toggle-dot{
+
+    left:27px;
+}
+.hero-title{
+
+    position:absolute;
+
+    top:95px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-family:'Bungee', cursive;
+
+    font-size:55px;
+
+    color:white;
+
+    text-align:center;
+
+    opacity:0;
+
+    z-index:10;
+
+    white-space:nowrap;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero-title{
+
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-title{
+
+        font-size:28px;
+    }
+
+}
+
+.hero-title.animate{
+
+    animation:titleIn 1s ease forwards;
+}
+
+@keyframes titleIn{
+
+    0%{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(-80px);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+}
+.logo-text{
+
+    font-size:30px;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin:0;
+
+    transition:.3s;
+}
+
+.logo-text.active{
+
+    animation:
+    heartPop .6s ease,
+    rainbowHeart 5s linear;
+}
+
+@keyframes heartPop{
+
+    0%{
+        transform:scale(1);
+    }
+
+    40%{
+        transform:scale(1.35);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes rainbowHeart{
+
+    0%{
+        color:#ff2d55;
+        text-shadow:0 0 10px #ff2d55;
+    }
+
+    20%{
+        color:#ff9500;
+        text-shadow:0 0 15px #ff9500;
+    }
+
+    40%{
+        color:#ffd60a;
+        text-shadow:0 0 15px #ffd60a;
+    }
+
+    60%{
+        color:#30d158;
+        text-shadow:0 0 15px #30d158;
+    }
+
+    80%{
+        color:#0a84ff;
+        text-shadow:0 0 15px #0a84ff;
+    }
+
+    100%{
+        color:white;
+        text-shadow:none;
+    }
+}
+.hero-heading{
+
+    position:absolute;
+
+    top:95px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    color:white;
+
+    z-index:10;
+}
+
+.brand-name{
+
+    display:block;
+
+    font-family:'Bungee', cursive;
+
+    font-size:58px;
+
+    line-height:1;
+}
+
+.brand-tagline{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+@media(max-width:768px){
+
+    .brand-name{
+
+        font-size:42px;
+    }
+
+    .brand-tagline{
+
+        font-size:16px;
+    }
+}
+
+@media(max-width:480px){
+
+    .brand-name{
+
+        font-size:32px;
+    }
+
+    .brand-tagline{
+
+        font-size:13px;
+    }
+}
+.flow-tree{
+    width:320px;
+    margin:15px auto 0;
+}
+
+.vertical-top{
+    width:2px;
+    height:25px;
+    background:#fff;
+    margin:0 auto;
+}
+
+.horizontal{
+    width:100%;
+    height:2px;
+    background:#fff;
+}
+
+.branches{
+    display:flex;
+    justify-content:space-between;
+}
+
+.branch-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.vertical-bottom{
+    width:2px;
+    height:30px;
+    background:#fff;
+}
+
+.arrow{
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    margin:2px 0;
+}
+
+.branch-item span{
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+@media(max-width:480px){
+    .flow-tree{
+        width:220px;
+    }
+
+    .branch-item span{
+        font-size:13px;
+    }
+}
+.coming-soon-section{
+    position:absolute;
+
+    top:300px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    text-align:center;
+}
+
+.coming-soon-title{
+    font-family:'Bungee Spice', cursive;
+
+    font-size:70px;
+
+    line-height:1;
+
+    margin:0;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    transform:scale(0);
+}
+
+.coming-soon-title.show{
+    animation:zoomComingSoon 1s ease forwards;
+}
+
+@keyframes zoomComingSoon{
+
+    0%{
+        opacity:0;
+        transform:scale(0);
+    }
+
+    70%{
+        opacity:1;
+        transform:scale(1.15);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .coming-soon-title{
+        font-size:48px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .coming-soon-title{
+        font-size:32px;
+        letter-spacing:2px;
+    }
+
+}
+
+.app-launch-card{
+
+    position:absolute;
+
+    top:400px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(450px,90vw);
+
+    padding:30px 20px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    overflow:hidden;
+}
+
+.launch-icon-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    margin-bottom:20px;
+}
+
+.launch-icon-row i{
+
+    font-size:42px;
+
+    color:#fff;
+
+    text-shadow:0 0 10px rgba(255,255,255,.4);
+}
+
+.notify-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50px;
+
+    padding:6px;
+}
+
+.whatsapp-icon{
+
+    color:#4CFF7A;
+
+    font-size:28px;
+
+    padding:0 12px;
+
+    text-shadow:
+        0 0 10px #4CFF7A,
+        0 0 20px #4CFF7A,
+        0 0 35px #4CFF7A;
+}
+
+.notify-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:14px;
+}
+
+.notify-box input::placeholder{
+
+    color:rgba(255,255,255,.7);
+}
+
+.notify-box button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#22c55e;
+
+    cursor:pointer;
+}
+
+.balloon{
+
+    position:absolute;
+
+    font-size:34px;
+}
+
+.balloon-1{
+
+    top:12px;
+
+    left:18px;
+
+    animation:float1 4s ease-in-out infinite;
+}
+
+.balloon-2{
+
+    top:12px;
+
+    right:18px;
+
+    animation:float2 4s ease-in-out infinite;
+}
+
+.string{
+
+    position:absolute;
+
+    left:50%;
+
+    top:34px;
+
+    width:2px;
+
+    height:28px;
+
+    background:rgba(255,255,255,.7);
+
+    transform:translateX(-50%);
+}
+
+@keyframes float1{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes float2{
+
+    0%,100%{
+        transform:translateY(-8px);
+    }
+
+    50%{
+        transform:translateY(4px);
+    }
+}
+@media(max-width:768px){
+
+    .app-launch-card{
+        top:380px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .app-launch-card{
+        top:380px;
+    }
+
+}
+#fireworks{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+#notifyBtn{
+    transition:.3s;
+}
+
+#notifyBtn.ring{
+
+    animation:
+    bellZoom 1s ease;
+}
+
+@keyframes bellZoom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    20%{
+        transform:scale(2.2);
+    }
+
+    30%{
+        transform:scale(2.2) rotate(-20deg);
+    }
+
+    40%{
+        transform:scale(2.2) rotate(20deg);
+    }
+
+    50%{
+        transform:scale(2.2) rotate(-15deg);
+    }
+
+    60%{
+        transform:scale(2.2) rotate(15deg);
+    }
+
+    70%{
+        transform:scale(2.2) rotate(-10deg);
+    }
+
+    80%{
+        transform:scale(2.2) rotate(10deg);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.delivery-section{
+
+    position:absolute;
+
+    top:550px;
+
+    left:0;
+
+    width:100%;
+
+    height:140px;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+/* MOVING IMAGE */
+
+.delivery-bike{
+
+    position:absolute;
+
+    width:120px;
+
+    top:20px;
+
+    left:-150px;
+
+    animation:
+    bikeRun 8s linear infinite;
+
+    z-index:2;
+}
+
+@keyframes bikeRun{
+
+    from{
+        left:-150px;
+    }
+
+    to{
+        left:110%;
+    }
+}
+
+/* ROAD */
+
+.road{
+
+    position:absolute;
+
+    top:105px;
+
+    width:100%;
+
+    height:10px;
+
+    background:white;
+}
+
+.road::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:3px;
+
+    width:100%;
+
+    height:4px;
+
+    background:
+    repeating-linear-gradient(
+        to right,
+        transparent 0 25px,
+        #FFD700 25px 50px
+    );
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .delivery-bike{
+        width:90px;
+    }
+
+    .road{
+        top:90px;
+    }
+}
+
+@media(max-width:480px){
+
+    .delivery-bike{
+        width:75px;
+    }
+
+    .road{
+        top:80px;
+    }
+}
+.road-text{
+    position:absolute;
+    top:660px;
+    left:50%;
+    transform:translateX(-50%);
+    
+    color:white;
+    
+    font-family:'Bungee', cursive;
+    
+    font-size:18px;
+    
+    letter-spacing:2px;
+    
+    text-shadow:0 0 10px rgba(255,255,255,.8);
+    
+    white-space:nowrap;
+}
+@media(max-width:480px){
+
+    .road-text{
+        font-size:14px;
+        top:95px;
+    }
+
+}
+</style>
+</head>
+<body>
+
+<div class="splash" id="splash">
+
+    <div class="logo-wrap">
+
+        <div class="logo">
+
+            <!-- C -->
+
+            <div class="letter">
+
+                C
+
+                <span class="p p1">✦</span>
+                <span class="p p2">✦</span>
+                <span class="p p3">✦</span>
+                <span class="p p4">✦</span>
+                <span class="p p5">✦</span>
+               
+
+            </div>
+
+            <!-- e -->
+
+            <div class="letter">
+
+                e
+
+                <span class="p p1">✦</span>
+                <span class="p p2">✦</span>
+                <span class="p p3">✦</span>
+                <span class="p p4">✦</span>
+                <span class="p p5">✦</span>
+                
+
+            </div>
+
+            <!-- z -->
+
+            <div class="letter">
+
+                z
+
+                <span class="p p1">✦</span>
+                <span class="p p2">✦</span>
+                <span class="p p3">✦</span>
+                <span class="p p4">✦</span>
+                <span class="p p5">✦</span>
+                
+
+            </div>
+
+            <!-- z -->
+
+            <div class="letter">
+
+                o
+
+                <span class="p p1">✦</span>
+                <span class="p p2">✦</span>
+                <span class="p p3">✦</span>
+                <span class="p p4">✦</span>
+                <span class="p p5">✦</span>
+               
+
+            </div>
+
+            <!-- o -->
+
+            <div class="letter">
+
+                o
+
+                <span class="p p1">✦</span>
+                <span class="p p2">✦</span>
+                <span class="p p3">✦</span>
+                <span class="p p4">✦</span>
+                <span class="p p5">✦</span>
+                
+
+            </div>
+
+        </div>
+
+        <div class="tagline">
+            Everything in Minutes
+        </div>
+
+    </div>
+
+</div>
+
+<div class="main">
+
+    <nav class="navbar">
+<h2 class="logo-text" id="heartBtn">💖</h2>
+<div class="bell" id="bell">
+    🔔
+</div>
+    </nav>
+<div class="hero-heading">
+
+    <span class="brand-name">
+        CEZOO
+    </span>
+
+    <span class="brand-tagline">
+        Delivery In Minutes
+    </span>
+<div class="flow-tree">
+
+    <div class="vertical-top"></div>
+
+    <div class="horizontal"></div>
+
+    <div class="branches">
+
+        <div class="branch-item left">
+            <div class="vertical-bottom"></div>
+            <div class="arrow">↓</div>
+            <span>GROCERIES</span>
+        </div>
+
+        <div class="branch-item right">
+            <div class="vertical-bottom"></div>
+            <div class="arrow">↓</div>
+            <span>VILLAGES</span>
+        </div>
+
+    </div>
+
+</div>
+    
+</div>
+<canvas id="fireworks"></canvas>
+<section class="coming-soon-section">
+
+    <h2 class="coming-soon-title" id="comingSoon">
+    COMING SOON
+</h2>
+
+</section>
+<div class="app-launch-card">
+
+    <div class="balloon balloon-1">
+        🎈
+        <span class="string"></span>
+    </div>
+
+    <div class="balloon balloon-2">
+        🎈
+        <span class="string"></span>
+    </div>
+
+    <div class="launch-icon-row">
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-google-play"></i>
+    </div>
+
+    <div class="notify-box">
+
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+
+        <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            maxlength="10"
+        >
+
+       <button id="notifyBtn">
+    <i class="fas fa-bell"></i>
+</button>
+    </div>
+
+</div>
+<div class="delivery-section">
+
+    <img
+        src="del.png"
+        alt="Delivery"
+        class="delivery-bike"
+    >
+
+    <div class="road"></div>
+
+</div>
+<div class="road-text">
+    FAST DELIVERY
+</div>
+<div class="side-tab" id="sideTab">
+    ❯
+</div>
+
+<div class="lang-switch" id="langSwitch">
+
+    <span>ENG</span>
+
+    <div class="toggle" id="toggle">
+
+        <div class="toggle-dot"></div>
+
+    </div>
+
+   <span>తెలుగు</span>
+
+</div>
+    
+</div>
+
+<script>
+
+setTimeout(function(){
+
+    document
+    .getElementById("splash")
+    .classList.add("hideSplash");
+
+},3000);
+
+const sideTab =
+document.getElementById(
+"sideTab"
+);
+
+const langSwitch =
+document.getElementById(
+"langSwitch"
+);
+
+const toggle =
+document.getElementById(
+"toggle"
+);
+
+sideTab.onclick = (e)=>{
+
+    e.stopPropagation();
+
+    langSwitch.classList.toggle(
+        "show"
+    );
+
+    sideTab.classList.toggle(
+        "hide"
+    );
+
+};
+
+toggle.onclick = (e)=>{
+
+    e.stopPropagation();
+
+    toggle.classList.toggle(
+        "active"
+    );
+
+};
+
+document.addEventListener(
+"click",
+function(e){
+
+    if(
+        !langSwitch.contains(
+            e.target
+        ) &&
+        !sideTab.contains(
+            e.target
+        )
+    ){
+
+        langSwitch.classList.remove(
+            "show"
+        );
+
+        sideTab.classList.remove(
+            "hide"
+        );
+
+    }
+
+});
+setTimeout(function(){
+
+    document
+    .getElementById("splash")
+    .classList.add("hideSplash");
+
+    document
+    .getElementById("heroTitle")
+    .classList.add("animate");
+
+},3000);
+const bell =
+document.getElementById(
+"bell"
+);
+
+bell.onclick = ()=>{
+
+    bell.classList.remove(
+        "animate"
+    );
+
+    void bell.offsetWidth;
+
+    bell.classList.add(
+        "animate"
+    );
+
+    /* LOUD BELL SOUND */
+
+    const audioCtx =
+    new (
+        window.AudioContext ||
+        window.webkitAudioContext
+    )();
+
+    const osc =
+    audioCtx.createOscillator();
+
+    const gain =
+    audioCtx.createGain();
+
+    osc.connect(gain);
+
+    gain.connect(
+        audioCtx.destination
+    );
+
+    osc.type = "triangle";
+
+    osc.frequency.setValueAtTime(
+        1800,
+        audioCtx.currentTime
+    );
+
+    osc.frequency.exponentialRampToValueAtTime(
+        700,
+        audioCtx.currentTime + 0.6
+    );
+
+    gain.gain.setValueAtTime(
+        0.8,
+        audioCtx.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioCtx.currentTime + 0.6
+    );
+
+    osc.start();
+
+    osc.stop(
+        audioCtx.currentTime + 0.6
+    );
+
+    setTimeout(()=>{
+
+        bell.classList.remove(
+            "animate"
+        );
+
+    },800);
+
+};
+const heartBtn =
+document.getElementById(
+"heartBtn"
+);
+
+heartBtn.onclick = ()=>{
+
+    heartBtn.classList.remove(
+        "active"
+    );
+
+    void heartBtn.offsetWidth;
+
+    heartBtn.classList.add(
+        "active"
+    );
+
+    setTimeout(()=>{
+
+        heartBtn.classList.remove(
+            "active"
+        );
+
+    },5000);
+
+};
+
+setTimeout(function(){
+
+    document
+    .getElementById("splash")
+    .classList.add("hideSplash");
+
+    document
+    .getElementById("comingSoon")
+    .classList.add("show");
+
+},3000);
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let rockets = [];
+let particles = [];
+
+function drawStar(x, y, size) {
+
+
+ctx.beginPath();
+
+for (let i = 0; i < 5; i++) {
+
+    let outer =
+        (18 + i * 72) *
+        Math.PI / 180;
+
+    let inner =
+        (54 + i * 72) *
+        Math.PI / 180;
+
+    ctx.lineTo(
+        x + Math.cos(outer) * size,
+        y + Math.sin(outer) * size
+    );
+
+    ctx.lineTo(
+        x + Math.cos(inner) * (size / 2),
+        y + Math.sin(inner) * (size / 2)
+    );
+}
+
+ctx.closePath();
+ctx.fill();
+
+
+}
+
+/* STAR PARTICLES */
+
+class Particle {
+
+
+constructor(x, y) {
+
+    this.x = x;
+    this.y = y;
+
+    const angle =
+        Math.random() *
+        Math.PI * 2;
+
+    const speed =
+        Math.random() * 4 + 1;
+
+    this.vx =
+        Math.cos(angle) * speed;
+
+    this.vy =
+        Math.sin(angle) * speed;
+
+    this.life = 80;
+}
+
+update() {
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+    this.vy += 0.02;
+
+    this.life--;
+}
+
+draw() {
+
+    ctx.globalAlpha =
+        this.life / 80;
+
+    ctx.fillStyle =
+        "#ffffff";
+
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#ffffff";
+
+    drawStar(
+        this.x,
+        this.y,
+        3
+    );
+
+    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 1;
+}
+
+
+}
+
+/* TRAIL */
+
+class TrailParticle {
+
+
+constructor(x, y) {
+
+    this.x = x;
+    this.y = y;
+
+    this.life = 20;
+}
+
+update() {
+
+    this.life--;
+}
+
+draw() {
+
+    ctx.globalAlpha =
+        this.life / 20;
+
+    ctx.fillStyle =
+        "#ffffff";
+
+    drawStar(
+        this.x,
+        this.y,
+        2
+    );
+
+    ctx.globalAlpha = 1;
+}
+
+
+}
+
+/* ROCKET */
+
+class Rocket {
+
+
+constructor() {
+
+    this.x =
+        Math.random() *
+        canvas.width;
+
+    this.y =
+        canvas.height + 20;
+
+    this.targetY =
+        100 +
+        Math.random() * 220;
+
+    this.speed =
+        6 +
+        Math.random() * 2;
+}
+
+update() {
+
+    this.y -= this.speed;
+
+    for (let i = 0; i < 4; i++){
+
+        particles.push(
+
+            new TrailParticle(
+
+                this.x +
+                (Math.random() * 6 - 3),
+
+                this.y + 12
+            )
+        );
+    }
+
+    if (
+        this.y <=
+        this.targetY
+    ) {
+
+        explode(
+            this.x,
+            this.y
+        );
+
+        return false;
+    }
+
+    return true;
+}
+
+draw() {
+
+    ctx.fillStyle =
+        "#ffffff";
+
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = "#ffffff";
+
+    drawStar(
+        this.x,
+        this.y,
+        5
+    );
+
+    ctx.shadowBlur = 0;
+}
+
+
+}
+
+/* EXPLOSION */
+
+function explode(x, y) {
+
+
+for (
+    let i = 0;
+    i < 25;
+    i++
+) {
+
+    particles.push(
+        new Particle(
+            x,
+            y
+        )
+    );
+}
+
+
+}
+
+/* NEW ROCKET */
+
+setInterval(() => {
+
+
+rockets.push(
+    new Rocket()
+);
+
+
+}, 1800);
+
+/* LOOP */
+
+function animate() {
+
+
+ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+);
+
+rockets =
+    rockets.filter(r => {
+
+        r.draw();
+
+        return r.update();
+    });
+
+particles =
+    particles.filter(p => {
+
+        p.draw();
+
+        p.update();
+
+        return p.life > 0;
+    });
+
+requestAnimationFrame(
+    animate
+);
+
+
+}
+
+animate();
+
+
+const notifyBtn =
+document.getElementById(
+    "notifyBtn"
+);
+
+notifyBtn.addEventListener(
+    "click",
+    () => {
+
+        notifyBtn.classList.remove(
+            "ring"
+        );
+
+        void notifyBtn.offsetWidth;
+
+        notifyBtn.classList.add(
+            "ring"
+        );
+    }
+);
+</script>
+
+</body>
+</html>
