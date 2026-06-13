@@ -3226,6 +3226,66 @@ body{
     }
 
 }
+    .founder-section{
+    text-align:center;
+    margin:70px auto;
+}
+
+.founder-heading{
+    font-family:'Bungee',cursive;
+    color:#FFD700;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.founder-card{
+    width:220px;
+    margin:0 auto;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+
+    padding:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.founder-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+
+    border-radius:20px;
+    display:block;
+}
+
+.founder-name{
+    margin-top:15px;
+
+    color:white;
+    font-family:'Bungee',cursive;
+
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+@media(max-width:480px){
+
+    .founder-card{
+        width:180px;
+    }
+
+    .founder-card img{
+        height:220px;
+    }
+
+    .founder-name{
+        font-size:13px;
+    }
+}
 </style>
 </head>
 <body>
@@ -3798,33 +3858,23 @@ body{
 </div>
 </div>
 
-<div class="team-section">
+<div class="founder-section">
 
-    <div class="team-heading">
-        TEAM
-    </div>
+    <h2 class="founder-heading">
+        FOUNDER
+    </h2>
 
-    <div class="team-scroll">
+    <div class="founder-card">
 
-        <div class="team-member">
-            <img src="team1.jpg" alt="">
-            <div class="team-name">Sundar Reddy</div>
-        </div>
+        <img src="founder.jpeg" alt="Founder">
 
-        <div class="team-member">
-            <img src="team2.jpg" alt="">
-            <div class="team-name">Poojitha</div>
-        </div>
-
-        <div class="team-member">
-            <img src="team3.jpg" alt="">
-            <div class="team-name">Rahul</div>
+        <div class="founder-name">
+            SUNDAR REDDY
         </div>
 
     </div>
 
 </div>
-
 
 
 <div class="fun-heading">
